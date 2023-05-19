@@ -180,13 +180,10 @@ def scanNetworks():
         netArgs = (i, ' ', w[0].decode())
         networkStrings.append(''.join(str(arg) for arg in netArgs))
 
-    print("scanned networks")
-    #wlan.active(False)
-
     LCD.fill(LCD.white)
     i = 0
     for i in range(len(networkStrings)):
-        LCD.text(networkStrings[i],2, (16*i) + 4)
+        LCD.text(networkStrings[i],2, (12*i) + 4)
     
     time.sleep_ms(100)
     core2Running = False
@@ -259,34 +256,34 @@ if __name__=='__main__':
             LCD.rect(208,195,30,30,LCD.red)
             
         if(up.value() == 0):
-            LCD.fill_rect(60,60,30,30,LCD.red)
+            LCD.fill_rect(60,110,30,30,LCD.red)
         else :
-            LCD.fill_rect(60,60,30,30,LCD.white)
-            LCD.rect(60,60,30,30,LCD.red)
+            LCD.fill_rect(60,110,30,30,LCD.white)
+            LCD.rect(60,110,30,30,LCD.red)
             
         if(dowm.value() == 0):
-            LCD.fill_rect(60,150,30,30,LCD.red)
+            LCD.fill_rect(60,200,30,30,LCD.red)
         else :
-            LCD.fill_rect(60,150,30,30,LCD.white)
-            LCD.rect(60,150,30,30,LCD.red)
+            LCD.fill_rect(60,200,30,30,LCD.white)
+            LCD.rect(60,200,30,30,LCD.red)
             
         if(left.value() == 0):
-            LCD.fill_rect(15,105,30,30,LCD.red)
+            LCD.fill_rect(15,155,30,30,LCD.red)
         else :
-            LCD.fill_rect(15,105,30,30,LCD.white)
-            LCD.rect(15,105,30,30,LCD.red)
+            LCD.fill_rect(15,155,30,30,LCD.white)
+            LCD.rect(15,155,30,30,LCD.red)
         
         if(right.value() == 0):
-            LCD.fill_rect(105,105,30,30,LCD.red)
+            LCD.fill_rect(105,155,30,30,LCD.red)
         else :
-            LCD.fill_rect(105,105,30,30,LCD.white)
-            LCD.rect(105,105,30,30,LCD.red)
+            LCD.fill_rect(105,155,30,30,LCD.white)
+            LCD.rect(105,155,30,30,LCD.red)
         
         if(ctrl.value() == 0):
-            LCD.fill_rect(60,105,30,30,LCD.red)
+            LCD.fill_rect(60,155,30,30,LCD.red)
         else :
-            LCD.fill_rect(60,105,30,30,LCD.white)
-            LCD.rect(60,105,30,30,LCD.red)
+            LCD.fill_rect(60,155,30,30,LCD.white)
+            LCD.rect(60,155,30,30,LCD.red)
 
         pwm.duty_u16(brightness)     
         LCD.show()
